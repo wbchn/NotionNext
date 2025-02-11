@@ -2,7 +2,7 @@ import { siteConfig } from '@/lib/config'
 import { convertInnerUrl } from '@/lib/notion/convertInnerUrl'
 import { isBrowser, loadExternalResource } from '@/lib/utils'
 import dynamic from 'next/dynamic'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { GlobalStyle } from './GlobalStyle'
 import { initGoogleAdsense } from './GoogleAdsense'
@@ -20,91 +20,92 @@ const ExternalPlugin = props => {
   // 读取自Notion的配置
   const { NOTION_CONFIG } = props
   const DISABLE_PLUGIN = siteConfig('DISABLE_PLUGIN', null, NOTION_CONFIG)
-  const THEME_SWITCH = siteConfig('THEME_SWITCH', null, NOTION_CONFIG)
-  const DEBUG = siteConfig('DEBUG', null, NOTION_CONFIG)
-  const ANALYTICS_ACKEE_TRACKER = siteConfig(
-    'ANALYTICS_ACKEE_TRACKER',
-    null,
-    NOTION_CONFIG
-  )
-  const ANALYTICS_VERCEL = siteConfig('ANALYTICS_VERCEL', null, NOTION_CONFIG)
-  const ANALYTICS_BUSUANZI_ENABLE = siteConfig(
-    'ANALYTICS_BUSUANZI_ENABLE',
-    null,
-    NOTION_CONFIG
-  )
-  const ADSENSE_GOOGLE_ID = siteConfig('ADSENSE_GOOGLE_ID', null, NOTION_CONFIG)
-  const FACEBOOK_APP_ID = siteConfig('FACEBOOK_APP_ID', null, NOTION_CONFIG)
-  const FACEBOOK_PAGE_ID = siteConfig('FACEBOOK_PAGE_ID', null, NOTION_CONFIG)
-  const FIREWORKS = siteConfig('FIREWORKS', null, NOTION_CONFIG)
-  const SAKURA = siteConfig('SAKURA', null, NOTION_CONFIG)
-  const STARRY_SKY = siteConfig('STARRY_SKY', null, NOTION_CONFIG)
-  const MUSIC_PLAYER = siteConfig('MUSIC_PLAYER', null, NOTION_CONFIG)
-  const NEST = siteConfig('NEST', null, NOTION_CONFIG)
-  const FLUTTERINGRIBBON = siteConfig('FLUTTERINGRIBBON', null, NOTION_CONFIG)
-  const COMMENT_TWIKOO_COUNT_ENABLE = siteConfig(
-    'COMMENT_TWIKOO_COUNT_ENABLE',
-    null,
-    NOTION_CONFIG
-  )
-  const RIBBON = siteConfig('RIBBON', null, NOTION_CONFIG)
-  const CUSTOM_RIGHT_CLICK_CONTEXT_MENU = siteConfig(
-    'CUSTOM_RIGHT_CLICK_CONTEXT_MENU',
-    null,
-    NOTION_CONFIG
-  )
-  const CAN_COPY = siteConfig('CAN_COPY', null, NOTION_CONFIG)
-  const WEB_WHIZ_ENABLED = siteConfig('WEB_WHIZ_ENABLED', null, NOTION_CONFIG)
-  const AD_WWADS_BLOCK_DETECT = siteConfig(
-    'AD_WWADS_BLOCK_DETECT',
-    null,
-    NOTION_CONFIG
-  )
-  const CHATBASE_ID = siteConfig('CHATBASE_ID', null, NOTION_CONFIG)
-  const COMMENT_DAO_VOICE_ID = siteConfig(
-    'COMMENT_DAO_VOICE_ID',
-    null,
-    NOTION_CONFIG
-  )
-  const AD_WWADS_ID = siteConfig('AD_WWADS_ID', null, NOTION_CONFIG)
-  const COMMENT_ARTALK_SERVER = siteConfig(
-    'COMMENT_ARTALK_SERVER',
-    null,
-    NOTION_CONFIG
-  )
-  const COMMENT_ARTALK_JS = siteConfig('COMMENT_ARTALK_JS', null, NOTION_CONFIG)
-  const COMMENT_TIDIO_ID = siteConfig('COMMENT_TIDIO_ID', null, NOTION_CONFIG)
-  const COMMENT_GITTER_ROOM = siteConfig(
-    'COMMENT_GITTER_ROOM',
-    null,
-    NOTION_CONFIG
-  )
-  const ANALYTICS_BAIDU_ID = siteConfig(
-    'ANALYTICS_BAIDU_ID',
-    null,
-    NOTION_CONFIG
-  )
-  const ANALYTICS_CNZZ_ID = siteConfig('ANALYTICS_CNZZ_ID', null, NOTION_CONFIG)
-  const ANALYTICS_GOOGLE_ID = siteConfig(
-    'ANALYTICS_GOOGLE_ID',
-    null,
-    NOTION_CONFIG
-  )
-  const MATOMO_HOST_URL = siteConfig('MATOMO_HOST_URL', null, NOTION_CONFIG)
-  const MATOMO_SITE_ID = siteConfig('MATOMO_SITE_ID', null, NOTION_CONFIG)
-  const ANALYTICS_51LA_ID = siteConfig('ANALYTICS_51LA_ID', null, NOTION_CONFIG)
-  const ANALYTICS_51LA_CK = siteConfig('ANALYTICS_51LA_CK', null, NOTION_CONFIG)
+  // const THEME_SWITCH = siteConfig('THEME_SWITCH', null, NOTION_CONFIG)
+  // const DEBUG = siteConfig('DEBUG', null, NOTION_CONFIG)
+  // const ANALYTICS_ACKEE_TRACKER = siteConfig(
+  //   'ANALYTICS_ACKEE_TRACKER',
+  //   null,
+  //   NOTION_CONFIG
+  // )
+  // const ANALYTICS_VERCEL = siteConfig('ANALYTICS_VERCEL', null, NOTION_CONFIG)
+  // const ANALYTICS_BUSUANZI_ENABLE = siteConfig(
+  //   'ANALYTICS_BUSUANZI_ENABLE',
+  //   null,
+  //   NOTION_CONFIG
+  // )
+  // const ADSENSE_GOOGLE_ID = siteConfig('ADSENSE_GOOGLE_ID', null, NOTION_CONFIG)
+  // const FACEBOOK_APP_ID = siteConfig('FACEBOOK_APP_ID', null, NOTION_CONFIG)
+  // const FACEBOOK_PAGE_ID = siteConfig('FACEBOOK_PAGE_ID', null, NOTION_CONFIG)
+  // const FIREWORKS = siteConfig('FIREWORKS', null, NOTION_CONFIG)
+  // const SAKURA = siteConfig('SAKURA', null, NOTION_CONFIG)
+  // const STARRY_SKY = siteConfig('STARRY_SKY', null, NOTION_CONFIG)
+  // const MUSIC_PLAYER = siteConfig('MUSIC_PLAYER', null, NOTION_CONFIG)
+  // const NEST = siteConfig('NEST', null, NOTION_CONFIG)
+  // const FLUTTERINGRIBBON = siteConfig('FLUTTERINGRIBBON', null, NOTION_CONFIG)
+  // const COMMENT_TWIKOO_COUNT_ENABLE = siteConfig(
+  //   'COMMENT_TWIKOO_COUNT_ENABLE',
+  //   null,
+  //   NOTION_CONFIG
+  // )
+  // const RIBBON = siteConfig('RIBBON', null, NOTION_CONFIG)
+  // const CUSTOM_RIGHT_CLICK_CONTEXT_MENU = siteConfig(
+  //   'CUSTOM_RIGHT_CLICK_CONTEXT_MENU',
+  //   null,
+  //   NOTION_CONFIG
+  // )
+  // const CAN_COPY = siteConfig('CAN_COPY', null, NOTION_CONFIG)
+  // const WEB_WHIZ_ENABLED = siteConfig('WEB_WHIZ_ENABLED', null, NOTION_CONFIG)
+  // const AD_WWADS_BLOCK_DETECT = siteConfig(
+  //   'AD_WWADS_BLOCK_DETECT',
+  //   null,
+  //   NOTION_CONFIG
+  // )
+  // const CHATBASE_ID = siteConfig('CHATBASE_ID', null, NOTION_CONFIG)
+  // const COMMENT_DAO_VOICE_ID = siteConfig(
+  //   'COMMENT_DAO_VOICE_ID',
+  //   null,
+  //   NOTION_CONFIG
+  // )
+  // const AD_WWADS_ID = siteConfig('AD_WWADS_ID', null, NOTION_CONFIG)
+  // const COMMENT_ARTALK_SERVER = siteConfig(
+  //   'COMMENT_ARTALK_SERVER',
+  //   null,
+  //   NOTION_CONFIG
+  // )
+  // const COMMENT_ARTALK_JS = siteConfig('COMMENT_ARTALK_JS', null, NOTION_CONFIG)
+  // const COMMENT_TIDIO_ID = siteConfig('COMMENT_TIDIO_ID', null, NOTION_CONFIG)
+  // const COMMENT_GITTER_ROOM = siteConfig(
+  //   'COMMENT_GITTER_ROOM',
+  //   null,
+  //   NOTION_CONFIG
+  // )
+  // const ANALYTICS_BAIDU_ID = siteConfig(
+  //   'ANALYTICS_BAIDU_ID',
+  //   null,
+  //   NOTION_CONFIG
+  // )
+  // const ANALYTICS_CNZZ_ID = siteConfig('ANALYTICS_CNZZ_ID', null, NOTION_CONFIG)
+  // const ANALYTICS_GOOGLE_ID = siteConfig(
+  //   'ANALYTICS_GOOGLE_ID',
+  //   null,
+  //   NOTION_CONFIG
+  // )
+  // const MATOMO_HOST_URL = siteConfig('MATOMO_HOST_URL', null, NOTION_CONFIG)
+  // const MATOMO_SITE_ID = siteConfig('MATOMO_SITE_ID', null, NOTION_CONFIG)
+  // const ANALYTICS_51LA_ID = siteConfig('ANALYTICS_51LA_ID', null, NOTION_CONFIG)
+  // const ANALYTICS_51LA_CK = siteConfig('ANALYTICS_51LA_CK', null, NOTION_CONFIG)
+  const ANALYTICS_CLOUDFLARE_BEACON = siteConfig('ANALYTICS_CLOUDFLARE_BEACON', null, NOTION_CONFIG)
   const DIFY_CHATBOT_ENABLED = siteConfig(
     'DIFY_CHATBOT_ENABLED',
     null,
     NOTION_CONFIG
   )
-  const TIANLI_KEY = siteConfig('TianliGPT_KEY', null, NOTION_CONFIG)
+  // const TIANLI_KEY = siteConfig('TianliGPT_KEY', null, NOTION_CONFIG)
   const GLOBAL_JS = siteConfig('GLOBAL_JS', '', NOTION_CONFIG)
-  const CLARITY_ID = siteConfig('CLARITY_ID', null, NOTION_CONFIG)
+  // const CLARITY_ID = siteConfig('CLARITY_ID', null, NOTION_CONFIG)
   const IMG_SHADOW = siteConfig('IMG_SHADOW', null, NOTION_CONFIG)
   const ANIMATE_CSS_URL = siteConfig('ANIMATE_CSS_URL', null, NOTION_CONFIG)
-  const MOUSE_FOLLOW = siteConfig('MOUSE_FOLLOW', null, NOTION_CONFIG)
+  // const MOUSE_FOLLOW = siteConfig('MOUSE_FOLLOW', null, NOTION_CONFIG)
   const CUSTOM_EXTERNAL_CSS = siteConfig(
     'CUSTOM_EXTERNAL_CSS',
     null,
@@ -116,13 +117,13 @@ const ExternalPlugin = props => {
     NOTION_CONFIG
   )
   // 默认关闭NProgress
-  const ENABLE_NPROGRSS = siteConfig('ENABLE_NPROGRSS', false)
-  const COZE_BOT_ID = siteConfig('COZE_BOT_ID')
-  const HILLTOP_ADS_META_ID = siteConfig(
-    'HILLTOP_ADS_META_ID',
-    null,
-    NOTION_CONFIG
-  )
+  // const ENABLE_NPROGRSS = siteConfig('ENABLE_NPROGRSS', false)
+  // const COZE_BOT_ID = siteConfig('COZE_BOT_ID')
+  // const HILLTOP_ADS_META_ID = siteConfig(
+  //   'HILLTOP_ADS_META_ID',
+  //   null,
+  //   NOTION_CONFIG
+  // )
 
   // 自定义样式css和js引入
   if (isBrowser) {
@@ -155,20 +156,20 @@ const ExternalPlugin = props => {
     }
   }
 
-  const router = useRouter()
-  useEffect(() => {
-    // 异步渲染谷歌广告
-    if (ADSENSE_GOOGLE_ID) {
-      setTimeout(() => {
-        initGoogleAdsense(ADSENSE_GOOGLE_ID)
-      }, 3000)
-    }
+  // const router = useRouter()
+  // useEffect(() => {
+  //   // 异步渲染谷歌广告
+  //   if (ADSENSE_GOOGLE_ID) {
+  //     setTimeout(() => {
+  //       initGoogleAdsense(ADSENSE_GOOGLE_ID)
+  //     }, 3000)
+  //   }
 
-    setTimeout(() => {
-      // 映射url
-      convertInnerUrl(props?.allNavPages)
-    }, 500)
-  }, [router])
+  //   setTimeout(() => {
+  //     // 映射url
+  //     convertInnerUrl(props?.allNavPages)
+  //   }, 500)
+  // }, [router])
 
   useEffect(() => {
     // 执行注入脚本
@@ -184,7 +185,7 @@ const ExternalPlugin = props => {
     <>
       {/* 全局样式嵌入 */}
       <GlobalStyle />
-      {MOUSE_FOLLOW && <MouseFollow />}
+      {/* {MOUSE_FOLLOW && <MouseFollow />}
       {THEME_SWITCH && <ThemeSwitch />}
       {DEBUG && <DebugPanel />}
       {ANALYTICS_ACKEE_TRACKER && <Ackee />}
@@ -200,7 +201,6 @@ const ExternalPlugin = props => {
       {FLUTTERINGRIBBON && <FlutteringRibbon />}
       {COMMENT_TWIKOO_COUNT_ENABLE && <TwikooCommentCounter {...props} />}
       {RIBBON && <Ribbon />}
-      {DIFY_CHATBOT_ENABLED && <DifyChatbot />}
       {CUSTOM_RIGHT_CLICK_CONTEXT_MENU && <CustomContextMenu {...props} />}
       {!CAN_COPY && <DisableCopy />}
       {WEB_WHIZ_ENABLED && <WebWhiz />}
@@ -210,20 +210,27 @@ const ExternalPlugin = props => {
       {ENABLE_NPROGRSS && <LoadingProgress />}
       <AosAnimation />
       {ANALYTICS_51LA_ID && ANALYTICS_51LA_CK && <LA51 />}
-      {COZE_BOT_ID && <Coze />}
+      {COZE_BOT_ID && <Coze />} */}
 
-      {ANALYTICS_51LA_ID && ANALYTICS_51LA_CK && (
+      {DIFY_CHATBOT_ENABLED && <DifyChatbot />}
+
+      {ANALYTICS_CLOUDFLARE_BEACON && (
+        <>
+        <script src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon={`{"token": "${ANALYTICS_CLOUDFLARE_BEACON}"}`} defer />
+        </>
+      )}
+      {/* {ANALYTICS_51LA_ID && ANALYTICS_51LA_CK && (
         <>
           <script id='LA_COLLECT' src='//sdk.51.la/js-sdk-pro.min.js' defer />
           {/* <script async dangerouslySetInnerHTML={{
               __html: `
                     LA.init({id:"${ANALYTICS_51LA_ID}",ck:"${ANALYTICS_51LA_CK}",hashMode:true,autoTrack:true})
                     `
-            }} /> */}
+            }} /> * /}
         </>
-      )}
+      )} */}
 
-      {CHATBASE_ID && (
+      {/* {CHATBASE_ID && (
         <>
           <script
             id={CHATBASE_ID}
@@ -271,7 +278,7 @@ const ExternalPlugin = props => {
 
       {COMMENT_DAO_VOICE_ID && (
         <>
-          {/* DaoVoice 反馈 */}
+          {/* DaoVoice 反馈 * /}
           <script
             async
             dangerouslySetInnerHTML={{
@@ -310,7 +317,7 @@ const ExternalPlugin = props => {
         </>
       )}
 
-      {/* HILLTOP广告验证 */}
+      {/* HILLTOP广告验证 * /}
       {HILLTOP_ADS_META_ID && (
         <Head>
           <meta name={HILLTOP_ADS_META_ID} content={HILLTOP_ADS_META_ID} />
@@ -320,7 +327,7 @@ const ExternalPlugin = props => {
       {AD_WWADS_ID && (
         <>
           <Head>
-            {/* 提前连接到广告服务器 */}
+            {/* 提前连接到广告服务器 * /}
             <link rel='preconnect' href='https://cdn.wwads.cn' />
           </Head>
           <ExternalScript
@@ -330,7 +337,7 @@ const ExternalPlugin = props => {
         </>
       )}
 
-      {/* {COMMENT_TWIKOO_ENV_ID && <script defer src={COMMENT_TWIKOO_CDN_URL} />} */}
+      {/* {COMMENT_TWIKOO_ENV_ID && <script defer src={COMMENT_TWIKOO_CDN_URL} />} * /}
 
       {COMMENT_ARTALK_SERVER && <script defer src={COMMENT_ARTALK_JS} />}
 
@@ -338,7 +345,7 @@ const ExternalPlugin = props => {
         <script async src={`//code.tidio.co/${COMMENT_TIDIO_ID}.js`} />
       )}
 
-      {/* gitter聊天室 */}
+      {/* gitter聊天室 * /}
       {COMMENT_GITTER_ROOM && (
         <>
           <script
@@ -359,7 +366,7 @@ const ExternalPlugin = props => {
         </>
       )}
 
-      {/* 百度统计 */}
+      {/* 百度统计 * /}
       {ANALYTICS_BAIDU_ID && (
         <script
           async
@@ -377,7 +384,7 @@ const ExternalPlugin = props => {
         />
       )}
 
-      {/* 站长统计 */}
+      {/* 站长统计 * /}
       {ANALYTICS_CNZZ_ID && (
         <script
           async
@@ -389,7 +396,7 @@ const ExternalPlugin = props => {
         />
       )}
 
-      {/* 谷歌统计 */}
+      {/* 谷歌统计 * /}
       {ANALYTICS_GOOGLE_ID && (
         <>
           <script
@@ -412,7 +419,7 @@ const ExternalPlugin = props => {
         </>
       )}
 
-      {/* Matomo 统计 */}
+      {/* Matomo 统计 * /}
       {MATOMO_HOST_URL && MATOMO_SITE_ID && (
         <script
           async
@@ -431,80 +438,80 @@ const ExternalPlugin = props => {
             `
           }}
         />
-      )}
+      )} */}
     </>
   )
 }
 
-const TwikooCommentCounter = dynamic(
-  () => import('@/components/TwikooCommentCounter'),
-  { ssr: false }
-)
-const DebugPanel = dynamic(() => import('@/components/DebugPanel'), {
-  ssr: false
-})
-const ThemeSwitch = dynamic(() => import('@/components/ThemeSwitch'), {
-  ssr: false
-})
-const Fireworks = dynamic(() => import('@/components/Fireworks'), {
-  ssr: false
-})
-const MouseFollow = dynamic(() => import('@/components/MouseFollow'), {
-  ssr: false
-})
-const Nest = dynamic(() => import('@/components/Nest'), { ssr: false })
-const FlutteringRibbon = dynamic(
-  () => import('@/components/FlutteringRibbon'),
-  { ssr: false }
-)
-const Ribbon = dynamic(() => import('@/components/Ribbon'), { ssr: false })
-const Sakura = dynamic(() => import('@/components/Sakura'), { ssr: false })
-const StarrySky = dynamic(() => import('@/components/StarrySky'), {
-  ssr: false
-})
+// const TwikooCommentCounter = dynamic(
+//   () => import('@/components/TwikooCommentCounter'),
+//   { ssr: false }
+// )
+// const DebugPanel = dynamic(() => import('@/components/DebugPanel'), {
+//   ssr: false
+// })
+// const ThemeSwitch = dynamic(() => import('@/components/ThemeSwitch'), {
+//   ssr: false
+// })
+// const Fireworks = dynamic(() => import('@/components/Fireworks'), {
+//   ssr: false
+// })
+// const MouseFollow = dynamic(() => import('@/components/MouseFollow'), {
+//   ssr: false
+// })
+// const Nest = dynamic(() => import('@/components/Nest'), { ssr: false })
+// const FlutteringRibbon = dynamic(
+//   () => import('@/components/FlutteringRibbon'),
+//   { ssr: false }
+// )
+// const Ribbon = dynamic(() => import('@/components/Ribbon'), { ssr: false })
+// const Sakura = dynamic(() => import('@/components/Sakura'), { ssr: false })
+// const StarrySky = dynamic(() => import('@/components/StarrySky'), {
+//   ssr: false
+// })
 const DifyChatbot = dynamic(() => import('@/components/DifyChatbot'), {
   ssr: false
 })
-const Analytics = dynamic(
-  () =>
-    import('@vercel/analytics/react').then(async m => {
-      return m.Analytics
-    }),
-  { ssr: false }
-)
-const MusicPlayer = dynamic(() => import('@/components/Player'), { ssr: false })
-const Ackee = dynamic(() => import('@/components/Ackee'), { ssr: false })
-const Gtag = dynamic(() => import('@/components/Gtag'), { ssr: false })
-const Busuanzi = dynamic(() => import('@/components/Busuanzi'), { ssr: false })
-const Messenger = dynamic(() => import('@/components/FacebookMessenger'), {
-  ssr: false
-})
-const VConsole = dynamic(() => import('@/components/VConsole'), { ssr: false })
-const CustomContextMenu = dynamic(
-  () => import('@/components/CustomContextMenu'),
-  { ssr: false }
-)
-const DisableCopy = dynamic(() => import('@/components/DisableCopy'), {
-  ssr: false
-})
-const AdBlockDetect = dynamic(() => import('@/components/AdBlockDetect'), {
-  ssr: false
-})
-const LoadingProgress = dynamic(() => import('@/components/LoadingProgress'), {
-  ssr: false
-})
-const AosAnimation = dynamic(() => import('@/components/AOSAnimation'), {
-  ssr: false
-})
+// const Analytics = dynamic(
+//   () =>
+//     import('@vercel/analytics/react').then(async m => {
+//       return m.Analytics
+//     }),
+//   { ssr: false }
+// )
+// const MusicPlayer = dynamic(() => import('@/components/Player'), { ssr: false })
+// const Ackee = dynamic(() => import('@/components/Ackee'), { ssr: false })
+// const Gtag = dynamic(() => import('@/components/Gtag'), { ssr: false })
+// const Busuanzi = dynamic(() => import('@/components/Busuanzi'), { ssr: false })
+// const Messenger = dynamic(() => import('@/components/FacebookMessenger'), {
+//   ssr: false
+// })
+// const VConsole = dynamic(() => import('@/components/VConsole'), { ssr: false })
+// const CustomContextMenu = dynamic(
+//   () => import('@/components/CustomContextMenu'),
+//   { ssr: false }
+// )
+// const DisableCopy = dynamic(() => import('@/components/DisableCopy'), {
+//   ssr: false
+// })
+// const AdBlockDetect = dynamic(() => import('@/components/AdBlockDetect'), {
+//   ssr: false
+// })
+// const LoadingProgress = dynamic(() => import('@/components/LoadingProgress'), {
+//   ssr: false
+// })
+// const AosAnimation = dynamic(() => import('@/components/AOSAnimation'), {
+//   ssr: false
+// })
 
-const Coze = dynamic(() => import('@/components/Coze'), {
-  ssr: false
-})
-const LA51 = dynamic(() => import('@/components/LA51'), {
-  ssr: false
-})
-const TianliGPT = dynamic(() => import('@/components/TianliGPT'), {
-  ssr: false
-})
+// const Coze = dynamic(() => import('@/components/Coze'), {
+//   ssr: false
+// })
+// const LA51 = dynamic(() => import('@/components/LA51'), {
+//   ssr: false
+// })
+// const TianliGPT = dynamic(() => import('@/components/TianliGPT'), {
+//   ssr: false
+// })
 
 export default ExternalPlugin

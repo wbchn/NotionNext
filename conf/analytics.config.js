@@ -24,6 +24,9 @@ module.exports = {
   ANALYTICS_ACKEE_DOMAIN_ID:
     process.env.NEXT_PUBLIC_ANALYTICS_ACKEE_DOMAIN_ID || '', // e.g '82e51db6-dec2-423a-b7c9-b4ff7ebb3302'
 
+  ANALYTICS_CLOUDFLARE_BEACON:
+    process.env.NEXT_PUBLIC_ANALYTICS_CLOUDFLARE_BEACON || '', // e.g '8e961422ab284ba6a0e91ac62ad1f068'
+
   SEO_GOOGLE_SITE_VERIFICATION:
     process.env.NEXT_PUBLIC_SEO_GOOGLE_SITE_VERIFICATION || '', // Remove the value or replace it with your own google site verification code
 
